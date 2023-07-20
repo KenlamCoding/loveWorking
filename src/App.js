@@ -10,10 +10,9 @@ import "./assets/mediaQuery.css";
 function App() {
   return (
     <>
-      {/* <Header />*/}
+       <Header />
       <Content /> 
-      {/* <Banner /> */}
-  
+      <Banner />
     </>
     );
 }

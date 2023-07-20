@@ -2,7 +2,6 @@ import {
     useState
 } from "react";
 export default function WeatherAPI(){
-
     const [weathers, setWeathers] = useState([]);
     const [todayData, setTodayData] = useState([]);
     const [todayWeathers, setTodayWeathers] = useState([]);
@@ -23,18 +22,6 @@ export default function WeatherAPI(){
     */
     // async function getTodayAdvice() {
     //     // 
-    //     /*
-    //     Night 21:00 後
-    //     Today 9:00 前
-    //     //Special Weather Tips (warnsum)
-    //     //WTCSGNL: 強烈季候風信號
-    //         //TC1,TC3
-    //         //TC8NE TC8SE TC8NW TC8SW TC9 TC10
-    //     //WRAIN: 暴雨警告信號
-    //         //WRAINA yellow
-    //         //WRAINR
-    //         //WRAINB
-    //     */
 
     //     //Get Today Weather data (京士柏)
     //     //https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
@@ -54,9 +41,6 @@ export default function WeatherAPI(){
     // }
    
     // /*Function 2: 9 days
-    //     1. 9day weather
-    //         -
-    // */
      async function getNineDayWeather() {
         //9-day Weather Forecast (fnd)
         //
@@ -67,11 +51,21 @@ export default function WeatherAPI(){
         setTodayWeathers([])
         setWarning([])
     }
-    // // Object 3 : Special Weather Tips (Time to take a snap)
-    
     // // Object 3 : More offical message
     // async function getSpecialWeather() {
-    //     //Special Weather Tips (swt)
+            //     /*
+            //     Night 21:00 後
+            //     Today 9:00 前
+            //     //Special Weather Tips (warnsum)
+            //     //WTCSGNL: 強烈季候風信號
+            //         //TC1,TC3
+            //         //TC8NE TC8SE TC8NW TC8SW TC9 TC10
+            //     //WRAIN: 暴雨警告信號
+            //         //WRAINA yellow
+            //         //WRAINR
+            //         //WRAINB
+            //     */
+    //     //Special Weather(warnsum)
     //     //desciption && goverment giving information
     //     const response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=tc");
     //     const getSpecialWeatherTips = await response.json();

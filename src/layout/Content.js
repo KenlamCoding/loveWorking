@@ -2,22 +2,17 @@ import React, {
     useState,useEffect
 } from 'react';
 import "../assets/content.css"
+import {getTodayWeather} from "../hooks/getTodayWeather"
 export default function Content(){
     const [weather, setWeather] = useState([]);
     const [signal, setSignal] = useState([]);
-
-    async function getTodayAdvice() {
-        // 
+    let result=[];
+    async function getTodayAdvice(){
         //Get Today Weather data (京士柏)
         //https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
-        //
-
-        //Get Today message
-        let response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=flw&lang=tc");
+        let response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc");
         let GetToDayWeather = await response.json();
-        const temp = GetToDayWeather.forecastDesc.split("。");
-        let arrayMessage = temp.filter(message => message !== "")
-
+        setWeather(GetToDayWeather)
     }
     async function getSpecialWeather() {
         //天氣警告一覽 (warnsum)
@@ -33,47 +28,103 @@ export default function Content(){
         //desciption && goverment giving information
         const response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=tc");
         const getSpecialWeatherTips = await response.json();
-
+        setSignal(getSpecialWeatherTips)
     }
     useEffect(() => {
+        getTodayAdvice()
+        getSpecialWeather()
     }, [])
     return(<>
     <main>
             <div className="flex-row">
-                <div className="mainImg"></div>
+            {
+                (signal.WTCSGNL && signal.WTCSGNL.code != "TC1" && "TC3")||(signal.WRAIN && signal.WRAIN.code!="WRAINA" && "WRAINR")? 
+                < div className = "mainImg" > </div> : 
+                <div className = "mainSadImg" > </div >
+            }
+            
                 <div className="dataShow">
                     <h2 className="title">夠鐘番工la</h2>
                     <div className="detail">
-
                         <div>
-                            <img src="https://www.hko.gov.hk/images/HKOWxIconOutline/pic63.png" alt="" width="120px"/>
+                            <img src = {
+                                `https://www.hko.gov.hk/images/HKOWxIconOutline/pic${weather.icon}.png`
+                            }
+                            alt = ""
+                            width = "120px" />
                         </div>
                         <div className="flex-col">
-                            {/*Exist = show*/}
-                            <img src={false&&require('../assets/signal/'+'TC1'+'.png')} alt="" width="60px;" height="auto"/>
-                            <img src={true&&require('../assets/signal/TC3.png')} alt="" width="60px"  height="auto"/>
+                            {/*Exist = show
+                                <img src = {signal.WTCSGNL && require(`../assets/signal/${signal.WTCSGNL.code}.png`)
+                            */}
+                            {
+                                signal.WTCSGNL && < img src = {
+                                    require(`../assets/signal/${signal.WTCSGNL.code}.png`)
+                                }
+                            alt = "WTCSGNL" width = "60px;" height = "auto" />
+                            }
+
+                            {signal.WRAIN &&
+                            <img src =  {require(`../assets/signal/${signal.WRAIN.code}.png`)}
+                            alt = "WRAIN" width = "60px" height = "auto" />
+                            }
                         </div>
                     </div>
                     <div className="detail">
                         <h1>京士柏</h1>
-                        <h2>29C</h2>
-
+                        
                     </div>
+
+                    
                     <div >
                         <div className="flex-col">
-                            <h3 className="tag">建議: </h3>
-                            <div className="flex-row">
-                                {/*
-                                1. PSR:=>中
-                                1. >30c
-                                */}
-                                <img className="icon" src={true&&require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
-                                <img className="icon" src={true&&require('../assets/item/waterBottle.jpg')} width="75px;" height="75px;" alt=""/>
-                            </div>
-                            <h5 >更新 16:02</h5>
+                            <h2  className = "tag" >
+                            {weather.temperature&&weather.temperature.data
+                            && weather.temperature.data[0].value}C 
+                       </h2>
+                            {
+                                weather.uvindex &&
+                                 weather.uvindex.data && 
+                                 weather.uvindex.data &&
+                                 <h3 className = "" > UV index: {weather.uvindex.data[0].value}</h3> 
+                            } 
+                            
+                            <div className = "flex-row" >
+                                
+                            <h3 className="tag">建議 </h3>
+                                <div className="flex-row">
+                                    {
+                                    /* 降雨機率   
+                                    1. PSR:=>中
+                                    2. >30c
+                                    */}
+                                    {
+                                        (weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" src={require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
+                                    
+                                    
+                                    }
+
+                                    {
+                                        (weather.temperature && weather.temperature.data && weather.temperature.data[0].value > 28) && < img className = "icon"
+                                        src = {
+                                            require('../assets/item/waterBottle.jpg')
+                                        }
+                                        width = "75px;"
+                                        height = "75px;"
+                                        alt = "" />
+                                    }
+                                </div>
+                            </div>     
+                            
+
+                            <h5 > 更新 {
+                                weather.updateTime&&weather.updateTime.substr(0, 16)
+                            } </h5>
                             
                         </div>
                     </div>
+                    
+                    
                 </div>
             </div>
         </main>

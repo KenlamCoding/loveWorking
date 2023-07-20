@@ -56,7 +56,8 @@
         }
 
         footer,
-        .mainImg {
+        .mainImg,
+        .mainSadImg {
             display: none;
         }
 
