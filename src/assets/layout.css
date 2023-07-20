@@ -1,0 +1,28 @@
+html {
+    font-family: "Helvetica", "Arial", "LiHei Pro", "黑體-繁", "微軟正黑體", sans-serif;
+}
+
+body {
+    margin: 0px;
+    background: linear-gradient(var(--Weather-light-1) 30%, var(--Weather-light-3)60%,
+            var(--Weather-light-4) 100%);
+    background-size: cover;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+:root {
+    --Weather-light-1: #0D9DE3;
+    --Weather-light-2: #01BFFF;
+    --Weather-light-3: #00CCFF;
+    --Weather-light-4: #F1F1F1;
+    --Weather-light-5: #7F9BA6;
+    --Weather-light-6: #4E6969;
+
+    --Weather-night-1: #131862;
+    --Weather-night-2: #2e4482;
+    --Weather-night-3: #546bab;
+    --Weather-night-4: #87889c;
+    --Weather-night-5: #bea9de;
+
+}

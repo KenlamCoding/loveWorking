@@ -1,0 +1,31 @@
+ .nineDay {
+        background: linear-gradient(var(--Weather-light-1) 10%,var(--Weather-light-3) 50%,var(--Weather-light-1) 100%);
+        background-size: cover;
+        height: fit-content;
+        overflow:visible;
+    }
+
+    nav section {
+        max-width: 1200px;
+        margin: 0px auto;
+        display: flex;
+        flex-direction: row;
+        overflow-x: scroll;
+
+    }
+
+    .navItem {
+        padding: 8px 5px;
+        min-width: 120px;
+        margin: 15px auto;
+        background-color: transparent;
+        border-radius: 5px;
+        font-weight: bold;
+        color: var(--Weather-light-4);
+        text-align: center;
+        border: 5px solid var(--Weather-light-2);
+        box-shadow: 5px 5px 5px var(--Weather-light-4);
+    }
+    .navItem:nth-last-child(-n+2) {
+        display: none;
+    }

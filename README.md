@@ -7,21 +7,36 @@ Using react.js build the frontend website to obtain data form Hong Kong Observat
 
 ### Checklist
 Scope:
-## Get result with feature 2 and 3
+## Get result with feature 1 and 2
 - [ ] Today Advice (The place of departure and of destination) (rhrread)
-    - Temperature
-    - Air Quality Health Index
-    - Precipitation
-    - Special Weather
-        - 
+    # Get data
+    - Temperature (Basic)
+    - Rain or no
     - Warning info (warningInfo)
+    - 本港地區天氣預報 (flw)
+        - tcInfo 熱帶氣旋資訊
+    - [ ] Special Weather Tips (swt) 5/7
+    # Result: giving advice With AI
+    - [x] AI template 
+    - [ ] AI 
 
-- [ ] Special Weather Tips (swt) 5/7
+    # Example
+    - Get Umbrella
+    - Work or not
+    - Too not or not 
 
-- [ ] Read 9 day weather prediction (fnd) 7/7
+    夠鐘番工 
+    建議帶遮 除非想膊頭鬆鬆
+
+
+
+
+
+- [x] Read 9 day weather prediction (fnd) 7/7
     - [ ] Index of happy working day depended on temperature, Air Quality Health Index and precipitation.
+    - [ ] UI 
+    - [ ] ICON
     ### https://data.weather.gov.hk/weatherAPI/opendata/weather.php
-
 
 - Language
 

@@ -1,12 +1,21 @@
 import React ,{ useState }from 'react';
-import "./assets/output.css"
 
+import Home from "./pages/Home";
+import WeatherAPI from "./hooks/WeatherAPI";
+import Banner from "./layout/Banner";
+import Content from "./layout/Content";
+import Header from "./layout/Header";
+import "./assets/layout.css";
+import "./assets/mediaQuery.css";
 function App() {
   return (
     <>
-      <p class = "fontp-serif text-center text-3xl font-bold underline" > Well Come To MY Portfolio </p>
+      {/* <Header />*/}
+      <Content /> 
+      {/* <Banner /> */}
+  
     </>
-  );
+    );
 }
 
 export default App;

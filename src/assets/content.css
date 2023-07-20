@@ -1,0 +1,65 @@
+    main {
+        background: linear-gradient(var(--Weather-light-4) 30%,
+                var(--Weather-light-3)60%,
+                var(--Weather-light-4) 100%);
+        width: 800px;
+        min-height: 500px;
+        height: fit-content;
+        margin: 15px auto;
+        border: 5px solid var(--Weather-light-2);
+        border-radius: 5px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .mainSadImg {
+        display: inline-block;
+        position: relative;
+        background-image: url("../assets/item/sad.png");
+        background-position: center;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+    }
+    .detail {
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+    }
+    .dataShow{
+        margin: 15px auto;
+    }
+    .title {
+        background-color: var(--Weather-light-1);
+        color: var(--Weather-light-4);
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .tag {
+        background-color: var(--Weather-light-2);
+        color: white;
+        display: inline-flex;
+        padding: 5px 8px;
+        border-radius: 5px;
+        margin: auto ;
+        height: fit-content;
+    }
+    .icon{
+        border-radius: 50%;
+        margin: 15px;
+    }
+    
+    .flex-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        vertical-align: text-top;
+    }
+
+    .flex-col {
+        display: flex;
+        flex-direction: column;
+    }
