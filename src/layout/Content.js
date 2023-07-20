@@ -44,7 +44,12 @@ export default function Content(){
             }
             
                 <div className="dataShow">
-                    <h2 className="title">夠鐘番工la</h2>
+                     {(signal.WTCSGNL && signal.WTCSGNL.code != "TC1" && "TC3")
+                     ||(signal.WRAIN && signal.WRAIN.code!="WRAINA" && "WRAINR")? 
+                    < h2 className = "title" > 問老細洗唔洗番工 </h2>:
+                     <h2 className="title">夠鐘番工la</h2>
+                     
+                     }
                     <div className="detail">
                         <div>
                             <img src = {
