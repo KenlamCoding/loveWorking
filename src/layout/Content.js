@@ -38,14 +38,14 @@ export default function Content(){
     <main>
             <div className="flex-row">
             {
-                (signal.WTCSGNL && signal.WTCSGNL.code != "TC1" && "TC3")||(signal.WRAIN && signal.WRAIN.code!="WRAINA" && "WRAINR")? 
+                (signal.WTCSGNL && signal.WTCSGNL.code !== "TC1" && signal.WTCSGNL.code !== "TC3") || (signal.WRAIN && signal.WRAIN.code !== "WRAINA" && "WRAINR") ?
                 < div className = "mainImg" > </div> : 
                 <div className = "mainSadImg" > </div >
             }
             
                 <div className="dataShow">
-                     {(signal.WTCSGNL && signal.WTCSGNL.code != "TC1" && "TC3")
-                     ||(signal.WRAIN && signal.WRAIN.code!="WRAINA" && "WRAINR")? 
+                     {(signal.WTCSGNL && signal.WTCSGNL.code !== "TC1" && signal.WTCSGNL.code !== "TC3")
+                     || (signal.WRAIN && signal.WRAIN.code !== "WRAINA" && signal.WRAIN.code !=="WRAINR") ?
                     < h2 className = "title" > 問老細洗唔洗番工 </h2>:
                      <h2 className="title">夠鐘番工la</h2>
                      
@@ -104,7 +104,8 @@ export default function Content(){
                                     2. >30c
                                     */}
                                     {
-                                        (weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" src={require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
+                                        (weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" 
+                                        src={require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
                                     
                                     
                                     }
