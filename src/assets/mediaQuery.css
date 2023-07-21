@@ -7,8 +7,6 @@
         }
 
         nav section {
-            position: absolute;
-            bottom: 0px;
             background: linear-gradient(var(--Weather-light-1) 30%, var(--Weather-light-3)60%,
             var(--Weather-light-1) 100%);
             width: 100%;
@@ -32,17 +30,13 @@
 
         }
 
-        .navItem:nth-last-child(-n+7) {
-            display: none;
-        }
-
         main {
             background: linear-gradient(var(--Weather-light-4) 30%,
                     var(--Weather-light-3)60%,
                     var(--Weather-light-4) 100%);
             width: 370px!important;
             height: fit-content;
-            margin: 15px auto 20px auto;
+            margin: 8px auto 8px auto;
             border: 2px solid var(--Weather-light-2);
             border-radius: 5px;
             text-align: center;
@@ -60,7 +54,9 @@
         .mainSadImg {
             display: none;
         }
-
+        .navItem:nth-last-child(-n+7) {
+            display: none;
+        }
     }
 
     /* Styles for devices with screens 768px to 1024px wide (tablets) */
