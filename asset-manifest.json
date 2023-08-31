@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/loveWorking/static/css/main.be84b904.css",
-    "main.js": "/loveWorking/static/js/main.0a7c2c31.js",
+    "main.css": "/loveWorking/static/css/main.9037e9b3.css",
+    "main.js": "/loveWorking/static/js/main.b6e05bb8.js",
     "static/js/787.f178c5af.chunk.js": "/loveWorking/static/js/787.f178c5af.chunk.js",
     "static/media/TC8NW.png": "/loveWorking/static/media/TC8NW.d6695095f1fa5654fb13.png",
     "static/media/WRAINR.png": "/loveWorking/static/media/WRAINR.771d5de78b5b0d862b40.png",
@@ -18,12 +18,12 @@
     "static/media/umbrella.jpg": "/loveWorking/static/media/umbrella.a5d80e4e88a5b8861d3e.jpg",
     "static/media/TC1.png": "/loveWorking/static/media/TC1.b5bdaead161bfd0d30c3.png",
     "index.html": "/loveWorking/index.html",
-    "main.be84b904.css.map": "/loveWorking/static/css/main.be84b904.css.map",
-    "main.0a7c2c31.js.map": "/loveWorking/static/js/main.0a7c2c31.js.map",
+    "main.9037e9b3.css.map": "/loveWorking/static/css/main.9037e9b3.css.map",
+    "main.b6e05bb8.js.map": "/loveWorking/static/js/main.b6e05bb8.js.map",
     "787.f178c5af.chunk.js.map": "/loveWorking/static/js/787.f178c5af.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.be84b904.css",
-    "static/js/main.0a7c2c31.js"
+    "static/css/main.9037e9b3.css",
+    "static/js/main.b6e05bb8.js"
   ]
 }
