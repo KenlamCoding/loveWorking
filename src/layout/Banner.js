@@ -15,7 +15,6 @@ export default function Banner(){
             setMessages(success);
         })
     },[])
-    console.log(messages)
    return <>
    <footer class = "nineDay" >
             <div id="bg">&nbsp;</div>

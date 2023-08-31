@@ -46,11 +46,11 @@ export default function Content(){
                 <div className="dataShow">
                      {(signal.WTCSGNL && signal.WTCSGNL.code !== "TC1" && signal.WTCSGNL.code !== "TC3")
                      || (signal.WRAIN && signal.WRAIN.code !== "WRAINA" && signal.WRAIN.code !=="WRAINR") ?
-                    < h2 className = "title" > 問老細洗唔洗番工 </h2>:
+                    < h2 className = "title" > 快啲問老細洗唔洗番工LA </h2>:
                      <h2 className="title">夠鐘番工la</h2>
                      
                      }
-                    <div className="detail">
+                    <div className = "detail " >
                         <div>
                             <img src = {
                                 `https://www.hko.gov.hk/images/HKOWxIconOutline/pic${weather.icon}.png`
@@ -58,10 +58,8 @@ export default function Content(){
                             alt = ""
                             width = "120px" />
                         </div>
-                        <div className="flex-col">
-                            {/*Exist = show
-                                <img src = {signal.WTCSGNL && require(`../assets/signal/${signal.WTCSGNL.code}.png`)
-                            */}
+                        <div className="flex-col ">
+                            
                             {
                                 signal.WTCSGNL && < img src = {
                                     require(`../assets/signal/${signal.WTCSGNL.code}.png`)
@@ -91,20 +89,19 @@ export default function Content(){
                                 weather.uvindex &&
                                  weather.uvindex.data && 
                                  weather.uvindex.data &&
-                                 <h3 className = "" > UV index: {weather.uvindex.data[0].value}</h3> 
+                                 <h3 className = "" > UV index: {weather?.uvindex?.data[0].value}</h3> 
                             } 
                             
-                            <div className = "flex-row" >
-                                
-                            <h3 className="tag">建議 </h3>
-                                <div className="flex-row">
+                            <div className = "flex-col" >
+                            
+                                <div className="flex-row justify-center">
                                     {
                                     /* 降雨機率   
                                     1. PSR:=>中
                                     2. >30c
                                     */}
                                     {
-                                        (weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" 
+                                        !(weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" 
                                         src={require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
                                     
                                     

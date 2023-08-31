@@ -26,3 +26,6 @@ body {
     --Weather-night-5: #bea9de;
 
 }
+.justify-center{
+    justify-content: center;
+}
