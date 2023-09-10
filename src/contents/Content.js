@@ -36,33 +36,44 @@ export default function Content(){
     }, [])
     return(<>
     <main>
-            <div className="flex-row">
-            {
-                (signal.WTCSGNL && signal.WTCSGNL.code !== "TC1" && signal.WTCSGNL.code !== "TC3") || (signal.WRAIN && signal.WRAIN.code !== "WRAINA" && "WRAINR") ?
-                < div className = "mainImg" > </div> : 
-                <div className = "mainSadImg" > </div >
-            }
-            
+            <div className="flex-row-sm-col">
+                {
+                    ( signal?.WTCSGNL?.code !== "TC1" && signal?.WTCSGNL?.code !== "TC3" && signal?.WTCSGNL?.code!==undefined) 
+                    || (signal?.WRAIN && signal?.WRAIN?.code !== "WRAINA" && "WRAINR" && signal?.WTCSGNL?.code!==undefined) ?
+                    <div>
+                        <h2 className = "title" > 快啲問老細洗唔洗番工LA</h2>
+                        <div className = "mainImg" > </div>
+                    </div>
+                    : 
+                    <div>
+                        <h2 className="title">夠鐘番工la</h2>
+                        <div className = "mainSadImg" > </div >
+                    </div>
+                }
                 <div className="dataShow">
-                     {(signal.WTCSGNL && signal.WTCSGNL.code !== "TC1" && signal.WTCSGNL.code !== "TC3")
-                     || (signal.WRAIN && signal.WRAIN.code !== "WRAINA" && signal.WRAIN.code !=="WRAINR") ?
-                    < h2 className = "title" > 快啲問老細洗唔洗番工LA </h2>:
-                     <h2 className="title">夠鐘番工la</h2>
-                     
-                     }
+                    <div className="detail">
+                        <h1>京士柏</h1>
+                        <h3 className = "" >
+                            {weather?.temperature?.data[0]?.value}C 
+                       </h3>
+                    </div>
                     <div className = "detail " >
+                        
                         <div>
-                            <img src = {
-                                `https://www.hko.gov.hk/images/HKOWxIconOutline/pic${weather.icon}.png`
+                            {
+                                weather?.icon!==undefined && <img src = {
+                                    `https://www.hko.gov.hk/images/HKOWxIconOutline/pic${weather.icon}.png`
+                                }
+                                alt = ""
+                                width = "120px" />
                             }
-                            alt = ""
-                            width = "120px" />
+                            
                         </div>
                         <div className="flex-col ">
                             
                             {
                                 signal.WTCSGNL && < img src = {
-                                    require(`../assets/signal/${signal.WTCSGNL.code}.png`)
+                                    require(`../assets/signal/${signal?.WTCSGNL?.code}.png`)
                                 }
                             alt = "WTCSGNL" width = "60px;" height = "auto" />
                             }
@@ -73,22 +84,11 @@ export default function Content(){
                             }
                         </div>
                     </div>
-                    <div className="detail">
-                        <h1>京士柏</h1>
-                        
-                    </div>
-
-                    
-                    <div >
+                    <div>
                         <div className="flex-col">
-                            <h2  className = "tag" >
-                            {weather.temperature&&weather.temperature.data
-                            && weather.temperature.data[0].value}C 
-                       </h2>
+                            
                             {
-                                weather.uvindex &&
-                                 weather.uvindex.data && 
-                                 weather.uvindex.data &&
+                                
                                  <h3 className = "" > UV index: {weather?.uvindex?.data[0].value}</h3> 
                             } 
                             
@@ -108,7 +108,8 @@ export default function Content(){
                                     }
 
                                     {
-                                        (weather.temperature && weather.temperature.data && weather.temperature.data[0].value > 28) && < img className = "icon"
+                                        (weather?.temperature?.data && weather?.temperature?.data[0]?.value > 28) && 
+                                        <img className = "icon"
                                         src = {
                                             require('../assets/item/waterBottle.jpg')
                                         }
@@ -121,7 +122,7 @@ export default function Content(){
                             
 
                             <h5 > 更新 {
-                                weather.updateTime&&weather.updateTime.substr(0, 16)
+                                weather?.updateTime?.substr(0, 16)
                             } </h5>
                             
                         </div>

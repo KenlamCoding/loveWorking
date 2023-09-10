@@ -44,6 +44,7 @@
         color: var(--Weather-light-4);
         padding: 5px;
         border-radius: 8px;
+        margin: 15px;
     }
 
        .tag {
@@ -61,6 +62,12 @@
     }
     
     .flex-row {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        vertical-align: text-top;
+    }
+    .flex-row-sm-col{
         display: flex;
         flex-direction: row;
         width: 100%;

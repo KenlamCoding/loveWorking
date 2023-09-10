@@ -58,6 +58,11 @@
         .navItem:nth-last-child(-n+7) {
             display: none;
         }
+
+        .flex-row-sm-col {
+            display: flex;
+            flex-direction: column;
+        }
     }
 
     /* Styles for devices with screens 768px to 1024px wide (tablets) */
@@ -82,4 +87,20 @@
     @media only screen and (min-width: 1024px) and (max-width: 1440px) {}
 
     /* Styles for devices with screens larger than 1440px (large desktops and TVs) */
-    @media only screen and (min-width: 1440px) {}
+    @media only screen and (max-height: 768px) {
+        footer{
+            display: none;
+        }
+    }
+    /*If height smaller than 768px*/
+    @media only screen and (max-height: 768px) {
+        footer {
+            display: none;
+        }
+    }
+    /**/
+    @media only screen and (max-height: 768px) {
+        footer {
+            display: none;
+        }
+    }

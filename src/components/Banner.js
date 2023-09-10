@@ -16,15 +16,15 @@ export default function Banner(){
         })
     },[])
    return <>
-   <footer class = "nineDay" >
+   <footer  >
             <div id="bg">&nbsp;</div>
-            <div class="newsBanner">
+            <div className="newsBanner">
                 {messages&&messages.map((message, index)=>{
                     return (<div key={index}>{message} </div>)
                 })}
             </div>
 
-        </footer>
+    </footer>
    
    </>
 }

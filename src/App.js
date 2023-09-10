@@ -1,16 +1,14 @@
 import React ,{ useState }from 'react';
 
-import Home from "./pages/Home";
-import WeatherAPI from "./hooks/WeatherAPI";
-import Banner from "./layout/Banner";
-import Content from "./layout/Content";
-import Header from "./layout/Header";
+import Banner from "./components/Banner";
+import Content from "./contents/Content";
+import Header from "./components/Header";
 import "./assets/layout.css";
 import "./assets/mediaQuery.css";
 function App() {
   return (
     <>
-       <Header />
+      <Header />
       <Content /> 
       <Banner />
     </>

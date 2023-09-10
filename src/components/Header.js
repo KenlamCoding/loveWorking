@@ -8,12 +8,7 @@ import "../assets/nav.css";
 export default function Header(){
     const [nineDay, setNineDay] = useState([]);
     
-    // async function getNineDayWeather() {
-    //       //9-day Weather Forecast (fnd)
-    //       const response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=fnd&lang=tc");
-    //       const getWeathers = await response.json();
-    //       setNineDay(getWeathers.weatherForecast)
-    // }
+
 
     useEffect(() => {
         let response = getNineDays();
