@@ -53,7 +53,7 @@ export default function Content(){
                 <div className="dataShow">
                     <div className="detail">
                         <h1>京士柏</h1>
-                        <h3 className = "" >
+                        <h3 className = "tag" >
                             {weather?.temperature?.data[0]?.value}C 
                        </h3>
                     </div>
@@ -89,7 +89,7 @@ export default function Content(){
                             
                             {
                                 
-                                 <h3 className = "" > UV index: {weather?.uvindex?.data[0].value}</h3> 
+                                 <h3 className = "tag" > UV : {weather?.uvindex?.data[0].value}</h3> 
                             } 
                             
                             <div className = "flex-col" >
