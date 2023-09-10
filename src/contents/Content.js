@@ -7,11 +7,11 @@ export default function Content(){
     const [weather, setWeather] = useState([]);
     const [signal, setSignal] = useState([]);
     let result=[];
-    async function getTodayAdvice(){
+    async  function getTodayAdvice(){
         //Get Today Weather data (京士柏)
         //https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
-        let response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc");
-        let GetToDayWeather = await response.json();
+        //let response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc");
+        let GetToDayWeather = await getTodayWeather()
         setWeather(GetToDayWeather)
     }
     async function getSpecialWeather() {
