@@ -16,7 +16,7 @@ export default function Banner(){
         })
     },[])
    return <>
-   <footer  >
+   <footer  className='footer'>
             <div id="bg">&nbsp;</div>
             <div className="newsBanner">
                 {messages&&messages.map((message, index)=>{

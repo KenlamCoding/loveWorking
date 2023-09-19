@@ -109,7 +109,7 @@ export default function Content(){
                                     2. >30c
                                     */}
                                     {
-                                        !(weather.icon <= 53 && weather.icon >= 65) &&<img className="icon" 
+                                        !(weather.icon < 53 || weather.icon > 65) &&<img className="icon" 
                                         src={require('../assets/item/umbrella.jpg')} width="75px;" height="75px;" alt=""/>
                                     
                                     

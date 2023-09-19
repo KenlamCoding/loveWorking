@@ -4,7 +4,7 @@
         height: fit-content;
         overflow:visible;
     }
-
+    
     nav section {
         max-width: 1200px;
         margin: 0px auto;
@@ -25,6 +25,9 @@
         text-align: center;
         border: 5px solid var(--Weather-light-2);
         box-shadow: 5px 5px 5px var(--Weather-light-4);
+    }
+    .navItem > span{
+        font-size: 15px;
     }
     .navItem:nth-last-child(-n+2) {
         display: none;
