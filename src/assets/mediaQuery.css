@@ -53,7 +53,7 @@
         footer,
         .mainImg,
         .mainSadImg {
-            display: none;
+            display: none!important;
         }
         .navItem:nth-last-child(-n+6) {
             display: none;
@@ -61,7 +61,7 @@
 
         .flex-row-sm-col {
             display: flex;
-            flex-direction: column;
+            flex-direction: column !important;
         }
     }
 

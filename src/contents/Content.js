@@ -30,6 +30,13 @@ export default function Content(){
         const getSpecialWeatherTips = await response.json();
         setSignal(getSpecialWeatherTips)
     }
+    function demo(){
+        setSignal({
+            "WTCSGNL": {
+                "code": "TC8NE"
+            }
+        })
+    }
     useEffect(() => {
         getTodayAdvice()
         getSpecialWeather()
@@ -79,7 +86,7 @@ export default function Content(){
                             }
 
                             {signal.WRAIN &&
-                            <img src =  {require(`../assets/signal/${signal.WRAIN.code}.png`)}
+                            <img src =  {require(`../assets/signal/${signal?.WRAIN?.code}.png`)}
                             alt = "WRAIN" width = "60px" height = "auto" />
                             }
                         </div>
@@ -89,7 +96,7 @@ export default function Content(){
                             
                             {
                                 
-                                 <h3 className = "tag" > UV : {weather?.uvindex?.data[0].value}</h3> 
+                                  <h3 className = "tag" > UV : {weather.uvindex&& weather.uvindex.data[0] && weather?.uvindex?.data[0].value}</h3> 
                             } 
                             
                             <div className = "flex-col" >
