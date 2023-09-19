@@ -1,5 +1,5 @@
-    /* Styles for devices with screens less than 768px wide (smartphones) */
-    @media only screen and (max-width: 767px) {
+
+    @media only screen and (max-width: 800px) {
         body {
             height: 100vh !important;
             background-color: #fff;
@@ -12,7 +12,7 @@
             margin: 0px auto;
             display: flex;
             flex-direction: row;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
 
         .navItem {
@@ -50,14 +50,15 @@
         flex-direction: column!important;
         }
 
-        footer,
+        /* footer, */
         .mainImg,
         .mainSadImg {
             display: none!important;
         }
-        .navItem:nth-last-child(-n+6) {
+        
+        /* .navItem:nth-last-child(-n+6) {
             display: none;
-        }
+        } */
 
         .flex-row-sm-col {
             display: flex;
@@ -65,8 +66,8 @@
         }
     }
 
-    /* Styles for devices with screens 768px to 1024px wide (tablets) */
-    @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Styles for devices with screens 800px to 1024px wide (tablets) */
+    @media only screen and (min-width: 800px) and (max-width: 1024px) {
         
         .navItem {
             padding: 5px 3px;
@@ -89,14 +90,40 @@
     /* Styles for devices with screens larger than 1440px (large desktops and TVs) */
     
     /*If height smaller than 768px*/
+
     @media only screen and (max-height: 768px) {
-        footer{
-            display: none;
+        .newsBanner {
+            display: flex;
+            min-height: 1em;
+            background: transparent;
+            color: #FFF;
+            padding: 2px;
+            line-height: 1.4;
+            text-align: center;
+            transform: translateZ(0);
+            cursor: pointer;
+            font-size: 20px;
+            overflow-x: hidden;
+            position: absolute;
+            bottom: auto !important;
+            left: 100%;
+            overflow: hidden;
+            animation: scroll 20s linear 1s infinite;
+
         }
-       
+        #bg {
+            min-height: 3em;
+            line-height: 1.6;
+            width: 100%;
+            background: var(--Weather-light-1);
+            position: absolute;
+            bottom: auto!important;
+            left: 0;
+            font-size: 20px;
+            font-family: "Roboto", Helvetica;
+        }
         body {
             height: 100%!important;
         }
     }
-    /**/
     

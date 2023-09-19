@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import "../assets/content.css"
 import {getTodayWeather} from "../hooks/getTodayWeather"
+import { getSpecialSignal } from '../hooks/getSpecialSignal';
+
 export default function Content(){
     const [weather, setWeather] = useState([]);
     const [signal, setSignal] = useState([]);
@@ -11,8 +13,8 @@ export default function Content(){
         //Get Today Weather data (京士柏)
         //https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc
         //let response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=rhrread&lang=tc");
-        let GetToDayWeather = await getTodayWeather()
-        setWeather(GetToDayWeather)
+        let GetToDayWeather = await getTodayWeather().then(data => setWeather(data))
+        
     }
     async function getSpecialWeather() {
         //天氣警告一覽 (warnsum)
@@ -26,9 +28,8 @@ export default function Content(){
             //WRAINB
         */
         //desciption && goverment giving information
-        const response = await fetch("https://data.weather.gov.hk/weatherAPI/opendata/weather.php?dataType=warnsum&lang=tc");
-        const getSpecialWeatherTips = await response.json();
-        setSignal(getSpecialWeatherTips)
+        const response = await getSpecialSignal().then(data => setSignal(data));
+        
     }
     function demo(){
         setSignal({
